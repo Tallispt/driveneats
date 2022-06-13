@@ -15,6 +15,7 @@ body {
     padding-left: 20px;
     position: fixed;
     top: 0;
+    z-index: 1;
 }
 
 .header p:nth-child(1){
@@ -54,7 +55,7 @@ body {
 }
 
 .meal-individual{
-    width: 172px;
+    width: min-content;
     background-color: white;
     box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
@@ -64,10 +65,31 @@ body {
     gap: 9px;
 }
 
+.selected{
+    border: 5px solid #32B72F;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.icon-not-selected{
+    display: none;
+}
+
+.icon-selected{
+    color: #32B72F;
+    font-size: 1.25rem;
+    position: absolute;
+    right: 13px;
+    bottom: 12px;
+}
+
 .meal-individual img{
     border-radius: 4px;
     width: 144px;
 }
+
+
+
 
 .meal-individual p:nth-child(2){
     font-family: 'Roboto', sans-serif;
@@ -102,6 +124,7 @@ body {
     align-items: center;
     position: fixed;
     bottom: 0;
+    z-index: 1;
 }
 
 .footer-button{
