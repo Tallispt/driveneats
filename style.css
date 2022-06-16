@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400;700&display=swap');
 
+* {
+    box-sizing: border-box;
+  }
+  
 body {
     background-color: #EEEEEE;
 }
@@ -39,7 +43,7 @@ body {
     margin-bottom: 108px;
 }
 
-.meal-title{
+.meal-top-title, .beverage-top-title, .dessert-top-title{
     padding-top: 27px;
     padding-bottom: 17px;
     font-family: 'Righteous', cursive;
@@ -48,13 +52,14 @@ body {
     color: #333333;
 }
 
-.meal-container{
+.meal-container, .beverage-container, .dessert-container{
     display: flex;
     gap: 16px;
     overflow-x: scroll;
+    padding-right: 20px;
 }
 
-.meal-individual{
+.meal, .beverage, .dessert{
     width: min-content;
     background-color: white;
     box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
@@ -63,19 +68,21 @@ body {
     display: flex;
     flex-direction: column;
     gap: 9px;
+    cursor: pointer;
 }
 
 .selected{
     border: 5px solid #32B72F;
     box-sizing: border-box;
     position: relative;
+    padding: 13px 9px 8px 9px;
 }
 
-.icon-not-selected{
-    display: none;
+.hidden{
+    display: none !important;
 }
 
-.icon-selected{
+.icon{
     color: #32B72F;
     font-size: 1.25rem;
     position: absolute;
@@ -83,15 +90,12 @@ body {
     bottom: 12px;
 }
 
-.meal-individual img{
+.meal-container img{
     border-radius: 4px;
     width: 144px;
 }
 
-
-
-
-.meal-individual p:nth-child(2){
+.meal-title, .beverage-title, .dessert-title{
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 1rem;
@@ -99,7 +103,7 @@ body {
     color: #333333;
 }
 
-.meal-individual p:nth-child(3){
+.meal-description, .beverage-description, .dessert-description{
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 0.9375rem;
@@ -107,7 +111,7 @@ body {
     color: #A6A6A6;
 }
 
-.meal-individual p:nth-child(4){
+.meal-price, .beverage-price, .dessert-price{
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 1rem;
@@ -127,6 +131,7 @@ body {
     z-index: 1;
 }
 
+
 .footer-button{
     background-color: #CBCBCB;
     border-radius: 50px;
@@ -137,11 +142,88 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0 25px;
-}
-
-.footer-button p{
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 1.25rem;
     color: white;
+    letter-spacing: 0.018em;
 }
+
+.active {
+    background-color: #32B72F;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+.active:hover {
+    opacity: 0.8;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 19px;
+  }
+  
+  .checkOrder-container {
+    font-family: 'Roboto', sans-serif;
+    background-color: #50D074;
+    max-width: 480px;
+    width: 100%;
+    font-size: 22px;
+    color: white;
+    padding: 24px;
+    padding-bottom: 10px;
+    border-radius: 9px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, .25);
+  }
+  
+ .title {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .checkOrder-container ul li {
+    display: flex;
+    justify-content: space-between;
+    margin: 16px 0;
+  }
+  
+  .checkOrder-container ul li.total {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  
+  .checkOrder-container button {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+.confirm {
+    background-color: white;
+    color: #50D074;
+    font-size: 22px;
+    height: 52px;
+    border-radius: 100px;
+  }
+  
+.cancel {
+    color: white;
+    background-color: transparent;
+    font-size: 20px;
+    margin-top: 10px;
+  }
