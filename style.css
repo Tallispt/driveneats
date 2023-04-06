@@ -67,6 +67,9 @@ body {
     display: flex;
     flex-direction: column;
     gap: 9px;
+}
+
+.meal, .beverage, .dessert, button:hover{
     cursor: pointer;
 }
 
@@ -209,7 +212,7 @@ body {
     align-items: center;
     border: none;
     font-weight: bold;
-    cursor: pointer;
+    /* cursor: pointer; */
   }
   
 .confirm {
