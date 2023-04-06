@@ -36,7 +36,6 @@ body {
     color: white;
 }
 
-
 .feed{
     margin-top: 96px;
     margin-left: 20px;
@@ -152,11 +151,11 @@ body {
 .active {
     background-color: #32B72F;
     font-weight: bold;
-    cursor: pointer;
-  }
+}
 
 .active:hover {
     opacity: 0.8;
+    cursor: pointer;
 }
 
 .overlay {
