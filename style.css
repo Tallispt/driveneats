@@ -92,7 +92,7 @@ body {
     bottom: 12px;
 }
 
-img{
+.meal img, .beverage img, .dessert img{
     border-radius: 4px;
     width: 144px;
     height: 86px;
